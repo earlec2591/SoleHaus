@@ -10,6 +10,17 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 
+tablet {
+  border-collapse: collapse;
+  margin: 20px 10px;
+}
+
+th {
+  padding: 12px 0px;
+  color: white;
+  background-color: blue;
+}
+
 td, th {
   border: 1px solid black;
   padding: 10px;
@@ -40,7 +51,7 @@ button {
   border-radius: 4px;
   cursor: pointer;
   color: white;
-  background-color: blue;
+  background-color: green;
 }
 
 .error-text {
@@ -54,13 +65,24 @@ button {
   background-color: red;
 }
 
+.homeBtn {
+  color: black;
+  background-color: white;
+  border: 1px;
+}
+
+.buyBtn {
+  color: white;
+  background-color: blue;
+}
+
 .debug {
   border: 1px solid red;
 }
 
 img {
-  height: 600px;
-  width: 800px;
+  height: auto;
+  max-width: 100%;
   display: block;
   margin-left: auto;
   margin-right: auto;

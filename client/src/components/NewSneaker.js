@@ -3,6 +3,7 @@ import axios from "axios";
 import { navigate, Link } from "@reach/router";
 
 const AddSneaker = (props) => {
+  const [ errors, setErrors ] = useState({});
   const [addSneaker, setAddSneaker] = useState({
     brand: "",
     name: "",
@@ -23,9 +24,43 @@ const AddSneaker = (props) => {
         navigate('/')
       })
       .catch((err) => {
-        console.log(err)
+        console.log(err.response.data.errors)
+        setErrors(err.response.data.errors);
       })
   };
+
+  const size = [
+    "3.5Y",
+    "4Y",
+    "4.5Y",
+    "5Y",
+    "5.5Y",
+    "6Y",
+    "6.5Y",
+    "7",
+    "7.5",
+    "8",
+    "8.5",
+    "9",
+    "9.5",
+    "10",
+    "10.5",
+    "11",
+    "11.5",
+    "12",
+    "12.5",
+    "13",
+    "14",
+    "15",
+  ];
+
+  const condition = [
+    "Deadstock", 
+    "Gently Worn", 
+    "Used", 
+    "Very Used", 
+    "Destroyed" 
+  ];
 
   const inputChange = (e) => {
     console.log("e.target.brand: " + e.target.brand);
@@ -42,6 +77,11 @@ const AddSneaker = (props) => {
       <form onSubmit={submitHandler}>
         <div>
           <label>Brand </label>
+          {
+            errors.brand ? 
+              <span className="error-text">{errors.brand.message}</span>
+              : null
+          }
           <input
             type="text"
             name="brand"
@@ -51,6 +91,11 @@ const AddSneaker = (props) => {
         </div>
         <div>
           <label>Name </label>
+          {
+            errors.name ? 
+              <span className="error-text">{errors.name.message}</span>
+              : null
+          }
           <input
             type="text"
             name="name"
@@ -60,6 +105,11 @@ const AddSneaker = (props) => {
         </div>
         <div>
           <label>Colorway </label>
+          {
+            errors.colorway ? 
+              <span className="error-text">{errors.colorway.message}</span>
+              : null
+          }
           <input
             type="text"
             name="colorway"
@@ -69,6 +119,11 @@ const AddSneaker = (props) => {
         </div>
         <div>
           <label>Release Date </label>
+          {
+            errors.releaseDate ? 
+              <span className="error-text">{errors.releaseDate.message}</span>
+              : null
+          }
           <input
             type="date"
             name="releaseDate"
@@ -78,29 +133,51 @@ const AddSneaker = (props) => {
         </div>
         <div>
           <label>Size </label>
-          <input
-            type="text"
+          {
+            errors.size ? 
+              <span className="error-text">{errors.size.message}</span>
+              : null
+          }
+          <select
             name="size"
             value={addSneaker.size}
             onChange={inputChange}
-          />
+            >
+            <option value=""></option>
+            {
+              size.map((size, index) => (
+                <option value={ size } key={ 'size-' + index }>{ size }</option>
+              ))
+            }
+            </select>
         </div>
         <div>
           <label>Condition </label>
+          {
+            errors.condition ? 
+              <span className="error-text">{errors.condition.message}</span>
+              : null
+          }
           <select
             name="condition"
             value={addSneaker.condition}
             onChange={inputChange}
             >
-            <option value="Deadstock">Deadstock</option>
-            <option value="Gently Worn">Gently Worn</option>
-            <option value="Used">Used</option>
-            <option value="Very Used">Very Used</option>
-            <option value="Destroyed">Destroyed</option>
+            <option value=""></option>
+            {
+              condition.map((condition, index) => (
+                <option value={ condition } key={ 'condition-' + index }>{ condition }</option>
+              ))
+            }
             </select>
         </div>
         <div>
           <label>Price </label>
+          {
+            errors.price ? 
+              <span className="error-text">{errors.price.message}</span>
+              : null
+          }
           <input
             type="number"
             min="1"
@@ -111,6 +188,11 @@ const AddSneaker = (props) => {
         </div>
         <div>
           <label>Upload Image </label>
+          {
+            errors.img ? 
+              <span className="error-text">{errors.img.message}</span>
+              : null
+          }
           <input
             type="text"
             name="img"
@@ -118,8 +200,9 @@ const AddSneaker = (props) => {
             onChange={inputChange}
           />
         </div>
-        <button>SELL!</button>
-        <button onClick={ () => navigate('/')} className="cancelBtn">Return Home</button>
+        <button>$ELL!</button>
+        <button onClick={ () => navigate('/sneakers/all/')} className="buyBtn">Buy Sneakers</button>
+        <button onClick={ () => navigate('/')} className="homeBtn">Return Home</button>
       </form>
     </div>
   );

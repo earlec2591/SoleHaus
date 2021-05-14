@@ -10,7 +10,7 @@ module.exports = {
       })
       .catch((err) => {
         console.log("error found in getAll");
-        res.json(err);
+        res.status(400).json(err);
       })
   },
 
@@ -24,7 +24,7 @@ module.exports = {
       })
       .catch((err) => {
         console.log("error found in create");
-        res.json(err);
+        res.status(400).json(err);
       })
   },
 
@@ -39,7 +39,7 @@ module.exports = {
       })
       .catch((err) => {
         console.log("error found in getOne");
-        res.json(err);
+        res.status(400).json(err);
       })
   },
 
@@ -57,7 +57,7 @@ module.exports = {
       })
       .catch((err) => {
         console.log("error found in update");
-        res.json(err);
+        res.status(400).json(err);
       })
   },
 
@@ -72,7 +72,7 @@ module.exports = {
       })
       .catch((err) => {
         console.log("error found in delete");
-        res.json(err);
+        res.status(400).json(err);
       })
   },
 }
