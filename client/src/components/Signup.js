@@ -5,7 +5,7 @@ import { navigate, Link } from '@reach/router';
 const Signup = (props) => {
   return(
     <div>
-      <h2>Create An Account</h2>
+      <h1>Create An Account</h1>
     </div>
   )
 }

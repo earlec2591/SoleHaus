@@ -1,38 +1,75 @@
 .App {
+  max-width: 800px;
+  margin: auto;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+td, th {
+  border: 1px solid black;
+  padding: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+tr:nth-child(even) {
+  background-color: #cfcfcf;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+tr:hover {
+  background-color: #8a8a8a;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  margin: 0px 10px;
+  padding: 5px 20px;
+  border: black;
+  border-radius: 4px;
+  cursor: pointer;
   color: white;
+  background-color: blue;
 }
 
-.App-link {
-  color: #61dafb;
+.error-text {
+  color: red;
+  margin-left: 25px;
+  margin-bottom: 25px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.deleteBtn {
+  color: black;
+  background-color: red;
+}
+
+.debug {
+  border: 1px solid red;
+}
+
+img {
+  height: 600px;
+  width: 800px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center {
+  text-align: center;
+}
+
+hr {
+  margin: 25px;
 }

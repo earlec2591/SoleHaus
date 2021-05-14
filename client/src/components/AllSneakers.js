@@ -18,8 +18,11 @@ const AllSneakers = (props) => {
 
   return(
     <div>
-      <h2>Inventory</h2>
+      <h1>Inventory</h1>
       <button onClick={getAllSneakers}>Show Inventory</button>
+      <Link to='/sneakers/add'>
+        <button>Sell Your Sneakers</button>
+      </Link>
       {
         allSneakers.map((sneaker, index) => (
           <div key={ index }>

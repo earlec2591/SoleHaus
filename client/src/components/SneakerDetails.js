@@ -37,6 +37,8 @@ const SneakerDetails = (props) => {
       <p>Size: { sneaker.size }</p>
       <p>Condition: { sneaker.condition }</p>
       <p>Price: ${ sneaker.price }</p>
+      <button onClick={ () => navigate(`/sneakers/${sneaker._id}/edit`) }>Edit Sneaker Info</button>
+      <Link to='/sneakers/all/'>Return to Inventory</Link>
     </div>
   )
 }

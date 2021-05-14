@@ -38,7 +38,7 @@ const AddSneaker = (props) => {
 
   return (
     <div>
-      <h2>Sell Your Sneaker</h2>
+      <h1>Sell Your Sneaker</h1>
       <form onSubmit={submitHandler}>
         <div>
           <label>Brand </label>
@@ -119,6 +119,7 @@ const AddSneaker = (props) => {
           />
         </div>
         <button>SELL!</button>
+        <button onClick={ () => navigate('/')} className="cancelBtn">Return Home</button>
       </form>
     </div>
   );
