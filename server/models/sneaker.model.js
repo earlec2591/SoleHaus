@@ -26,7 +26,7 @@ const SneakerSchema = new mongoose.Schema({
     type: String,
     required: [ true, "Condition is required" ],
     minlength: [ 3, "Condition must be at least three characters long" ],
-    enum: [ "Deadstock", "Gently Worn", "Very Used", "Destroyed" ]
+    enum: [ "Deadstock", "Gently Worn", "Used", "Very Used", "Destroyed" ]
   },
   price: {
     type: Number,
