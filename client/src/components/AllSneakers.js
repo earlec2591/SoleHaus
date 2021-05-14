@@ -23,7 +23,9 @@ const AllSneakers = (props) => {
       {
         allSneakers.map((sneaker, index) => (
           <div key={ index }>
-            <h4>{sneaker.brand} {sneaker.name}</h4>
+            <Link to={`/sneakers/${sneaker._id}`}>
+            <h4>{sneaker.brand} {sneaker.name} {sneaker.colorway}</h4>
+            </Link>
           </div>
         ))
       }

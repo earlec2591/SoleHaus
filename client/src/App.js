@@ -15,7 +15,7 @@ function App() {
         <Signup path='/signup' />
         <AllSneakers path='/sneakers/all' />
         <AddSneaker path='/sneakers/add' />
-        <SneakerDetails path='/sneakers/:id' />
+        <SneakerDetails path='/sneakers/:sneaker_id' />
         <EditSneaker path='/sneakers/:id/edit' />
       </Router>
     </div>
