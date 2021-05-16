@@ -50,6 +50,7 @@ const EditSneaker = (props) => {
           setSneaker={ setSneaker }
           errors={ errors}
           submitHandler={ submitHandler }
+          buttonLabel={ "Submit Your Sneaker Listing"}
         />
     </div>
   );

@@ -38,6 +38,7 @@ const AddSneaker = (props) => {
           setSneaker={ setAddSneaker }
           errors={ errors}
           submitHandler={ submitHandler }
+          buttonLabel={ "Submit Your Sneaker Listing"}
         />
     </div>
   );

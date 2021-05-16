@@ -3,7 +3,7 @@ import axios from 'axios';
 import { navigate, Link } from '@reach/router';
 
 const SneakerForm = (props) => {
-  const { sneaker, setSneaker, errors, submitHandler } = props;
+  const { sneaker, setSneaker, errors, submitHandler, buttonLabel } = props;
 
   const size = [
     "3.5Y",
@@ -103,7 +103,7 @@ const SneakerForm = (props) => {
           <input
             type="text"
             name="releaseDate"
-            value={ (new Date (sneaker.releaseDate)).toLocaleDateString("en-us") }
+            value={ (new Date(sneaker.releaseDate)).toLocaleDateString("en-us") }
             onChange={inputChange}
           />
         </div>
@@ -176,9 +176,8 @@ const SneakerForm = (props) => {
             onChange={inputChange}
           />
         </div>
-        <button>$ELL!</button>
-        <button onClick={ () => navigate('/sneakers/all/')} className="buyBtn">Buy Sneakers</button>
-        <button onClick={ () => navigate('/')} className="homeBtn">Return Home</button>
+        <button>{ buttonLabel }</button>
+        <button onClick={ () => navigate('/sneakers/all/')} className="homeBtn">Return To Inventory</button>
       </form>
   </div>
   )

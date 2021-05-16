@@ -14,6 +14,17 @@ const SneakerDetails = (props) => {
         console.log(err)
       });
   }, []);
+
+  const buySneaker = () => {
+    axios.delete('http://localhost:8000/api/sneakers/' + props.sneaker_id)
+      .then((res) => {
+        console.log(res.data);
+        navigate('/sneakers/all/')
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+  }
   
 
 /*
@@ -39,6 +50,7 @@ const SneakerDetails = (props) => {
       <p>Price: ${ sneaker.price }</p>
       <button onClick={ () => navigate(`/sneakers/${sneaker._id}/edit`) }>Edit Sneaker Info</button>
       <Link to='/sneakers/all/'>Return to Inventory</Link>
+      <button onClick={ buySneaker } className="buyBtn">Buy Sneaker</button>
     </div>
   )
 }

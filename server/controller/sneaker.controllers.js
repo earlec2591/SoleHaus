@@ -3,6 +3,7 @@ const Sneaker = require('../models/sneaker.model');
 module.exports = {
   getAll: (req, res) => {
     Sneaker.find({})
+      .sort({ price: "ascending" })
       .then((allSneakers) => {
         console.log("in all sneakers");
         console.log(allSneakers);
