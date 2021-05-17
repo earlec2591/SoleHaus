@@ -38,10 +38,12 @@ const SneakerForm = (props) => {
     "Destroyed" 
   ];
 
+  // works for all keys inside of the state obj
   const inputChange = (e) => {
     console.log("e.target.brand: " + e.target.brand);
     console.log("e.target.value: " + e.target.value);
 
+    // get a copy of the current state obj
     let newStateObject = { ...sneaker };
     newStateObject[e.target.name] = e.target.value;
     setSneaker(newStateObject);
@@ -49,7 +51,7 @@ const SneakerForm = (props) => {
 
   return(
   <div>
-    <h4>Sneaker Form</h4>
+    <h4>Complete ALL details below</h4>
     <form onSubmit={submitHandler}>
         <div>
           <label>Brand </label>

@@ -6,9 +6,20 @@
   padding: 20px;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1 {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-align: center;
+  color: navy;
+}
+
+h2, h3, h4, h5, h6 {
   text-align: center;
 }
+
+p {
+  text-align: center;
+}
+
 
 tablet {
   border-collapse: collapse;
@@ -56,6 +67,7 @@ button {
 
 .error-text {
   color: red;
+  font-style: italic;
   margin-left: 25px;
   margin-bottom: 25px;
 }

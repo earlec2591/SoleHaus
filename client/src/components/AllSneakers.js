@@ -1,40 +1,44 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { navigate, Link } from '@reach/router';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { navigate, Link } from "@reach/router";
 
 const AllSneakers = (props) => {
-  const [ allSneakers, setAllSneakers ] = useState([]);
+  const [allSneakers, setAllSneakers] = useState([]);
 
   const getAllSneakers = () => {
-    axios.get('http://localhost:8000/api/sneakers')
+    axios
+      .get("http://localhost:8000/api/sneakers")
       .then((res) => {
         console.log(res.data);
         setAllSneakers(res.data);
       })
       .catch((err) => {
         console.log(err);
-      })
-  }
+      });
+  };
 
-  return(
+  return (
     <div>
       <h1>Inventory</h1>
       <button onClick={getAllSneakers}>Show Inventory</button>
-      <Link to='/sneakers/add'>
+      <Link to="/sneakers/add">
         <button>Sell Your Sneakers</button>
       </Link>
-      {
-        allSneakers.map((sneaker, index) => (
-          <div key={ index }>
-            <Link to={`/sneakers/${sneaker._id}`}>
-            <img src={sneaker.img} alt='sneaker-img'/>
-            <h4>{sneaker.brand} {sneaker.name} {sneaker.colorway} {sneaker.size}</h4>
-            </Link>
-          </div>
-        ))
-      }
+      {allSneakers.map((sneaker, index) => (
+        <div key={index}>
+          <Link to={`/sneakers/${sneaker._id}`}>
+            <img src={sneaker.img} alt="sneaker-img" />
+            <h3>
+              {sneaker.brand} {sneaker.name}
+            </h3>
+          </Link>
+          <h4>Colorway: {sneaker.colorway}</h4>
+          <h4>Size: {sneaker.size}</h4>
+          <h4>Price: ${sneaker.price}</h4>
+        </div>
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default AllSneakers; 
+export default AllSneakers;

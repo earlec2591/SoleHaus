@@ -48,9 +48,9 @@ const EditSneaker = (props) => {
         <SneakerForm 
           sneaker={ sneaker }
           setSneaker={ setSneaker }
-          errors={ errors}
+          errors={ errors }
           submitHandler={ submitHandler }
-          buttonLabel={ "Submit Your Sneaker Listing"}
+          buttonLabel={ "Submit Your Edit"}
         />
     </div>
   );

@@ -42,16 +42,16 @@ const SneakerDetails = (props) => {
   return(
     <div>
       <h1>Sole Details</h1>
-      <h2>{ sneaker.brand } { sneaker.name } { sneaker.brand }</h2>
+      <h2>{ sneaker.brand } { sneaker.name }</h2>
       <img src={ sneaker.img } alt={sneaker.name} />
       <p>Release Date: { (new Date (sneaker.releaseDate)).toLocaleDateString("en-us") }</p>
-      <p>Size: { sneaker.size }</p>
+      <p>Size Available: { sneaker.size }</p>
       <p>Condition: { sneaker.condition }</p>
       <p>Price: ${ sneaker.price }</p>
-      <button onClick={ () => navigate(`/sneakers/${sneaker._id}/edit`) }>Edit Sneaker Info</button>
-      <Link to='/sneakers/all/'>Return to Inventory</Link>
+      <button onClick={ () => navigate(`/sneakers/${sneaker._id}/edit`) }>Update Sneaker Info</button>
       <button onClick={ buySneaker } className="buyBtn">Buy Sneaker</button>
-    </div>
+      <button onClick={ () => navigate('/sneakers/all/')} className="homeBtn">Return To Inventory</button>
+      </div>
   )
 }
 

@@ -32,11 +32,11 @@ const AddSneaker = (props) => {
 
   return (
     <div>
-      <h1>Sell Your Sneaker</h1>
+      <h1>Sell Your Soles</h1>
         <SneakerForm 
           sneaker={ addSneaker }
           setSneaker={ setAddSneaker }
-          errors={ errors}
+          errors={ errors }
           submitHandler={ submitHandler }
           buttonLabel={ "Submit Your Sneaker Listing"}
         />

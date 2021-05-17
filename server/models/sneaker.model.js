@@ -38,7 +38,6 @@ const SneakerSchema = new mongoose.Schema({
     required: [ true, "Image is required" ],
     minlength: [ 15, "Image must be at least 15 characters long" ],
   },
-
 }, { timestamps: true });
 
-module.exports = mongoose.model("Snekaer", SneakerSchema);
+module.exports = mongoose.model("Sneaker", SneakerSchema);
