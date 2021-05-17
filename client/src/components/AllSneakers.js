@@ -6,7 +6,7 @@ import Checkout from "./Checkout";
 const AllSneakers = (props) => {
   const [allSneakers, setAllSneakers] = useState([]);
 
-  const getAllSneakers = () => {
+  useEffect(() => {
     axios
       .get("http://localhost:8000/api/sneakers")
       .then((res) => {
@@ -16,15 +16,15 @@ const AllSneakers = (props) => {
       .catch((err) => {
         console.log(err);
       });
-  };
+  }, []);
 
   return (
     <div>
       <h1>Inventory</h1>
+      <p>Sort: Price Low to High</p>
       <div className="invButtons">
-      <button onClick={getAllSneakers}>Show Inventory</button>
       <Link to="/sneakers/add">
-        <button>Sell Your Sneakers</button>
+        <button className="buyBtn">Sell Your Sneakers</button>
       </Link>
       </div>
       <div className="container">

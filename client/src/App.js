@@ -6,19 +6,19 @@ import AddSneaker from './components/NewSneaker';
 import EditSneaker from './components/EditSneaker';
 import Login from './components/Login';
 import Checkout from './components/Checkout';
-import Signup from './components/Signin';
+import Signup from './components/Signup';
 
 function App() {
   return (
     <div className="App">
       <Router>
         <Login default />
-        <Signup path='/signup' />
+        <Signup path='/signup/' />
         <AllSneakers path='/sneakers/all' />
         <AddSneaker path='/sneakers/add' />
         <SneakerDetails path='/sneakers/:sneaker_id' />
         <EditSneaker path='/sneakers/:id/edit' />
-        <Checkout path='/checkout' />
+        <Checkout path='/checkout/:sneaker_id' />
       </Router>
     </div>
   );

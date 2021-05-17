@@ -5,7 +5,7 @@ import { navigate, Link } from '@reach/router';
 const Checkout = (props) => {
   const [ buySneaker, setBuySneaker ] = useState({});
   useEffect(() => {
-    axios.get('http://localhost:8000/api/sneakers/' + props.sneaker_id)
+    axios.delete('http://localhost:8000/api/sneakers/' + props.sneaker_id)
       .then((res) => {
         console.log(res.data);
         setBuySneaker(res.data);

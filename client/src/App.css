@@ -9,8 +9,8 @@
 h1 {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   text-align: center;
-  color: navy;
   font-size: 50px;
+  color: midnightblue;
 }
 
 h2, h3, h4, h5, h6 {
@@ -74,6 +74,7 @@ button {
   color: white;
   background-color: green;
   font-size: 16px;
+  text-align: center;
 }
 
 .error-text {
@@ -92,6 +93,7 @@ button {
   color: black;
   background-color: white;
   border: 1px;
+  text-align: center;
 }
 
 .buyBtn {

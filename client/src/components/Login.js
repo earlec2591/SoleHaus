@@ -30,7 +30,7 @@ const Login = (props) => {
           />
         </div>
         <button onClick={ () => navigate('/sneakers/all/')} className="homeBtn">Login</button>
-        <h5>Not a member? Click <Link to='/signup/'>here</Link> to signup!</h5>
+        <h5>Not a member? Click <Link to='/signup'>here</Link> to signup!</h5>
         
       </form>
     </div>

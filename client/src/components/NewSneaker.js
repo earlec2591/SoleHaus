@@ -22,7 +22,7 @@ const AddSneaker = (props) => {
     axios.post('http://localhost:8000/api/sneakers', addSneaker)
       .then((res) => {
         console.log(res.data);
-        navigate('/')
+        navigate('/sneakers/all')
       })
       .catch((err) => {
         console.log(err.response.data.errors)
@@ -38,7 +38,7 @@ const AddSneaker = (props) => {
           setSneaker={ setAddSneaker }
           errors={ errors }
           submitHandler={ submitHandler }
-          buttonLabel={ "Submit Your Sneaker Listing"}
+          buttonLabel={ "Submit Your Sneaker Listing" }
         />
     </div>
   );

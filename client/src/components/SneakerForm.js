@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { navigate, Link } from '@reach/router';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { navigate, Link } from "@reach/router";
 
 const SneakerForm = (props) => {
   const { sneaker, setSneaker, errors, submitHandler, buttonLabel } = props;
@@ -31,11 +31,11 @@ const SneakerForm = (props) => {
   ];
 
   const condition = [
-    "Deadstock", 
-    "Gently Worn", 
-    "Used", 
-    "Very Used", 
-    "Destroyed" 
+    "Deadstock",
+    "Gently Worn",
+    "Used",
+    "Very Used",
+    "Destroyed",
   ];
 
   // works for all keys inside of the state obj
@@ -49,17 +49,15 @@ const SneakerForm = (props) => {
     setSneaker(newStateObject);
   };
 
-  return(
-  <div>
-    <h4>Complete ALL details below</h4>
-    <form onSubmit={submitHandler}>
+  return (
+    <div>
+      <h4>Complete ALL details below</h4>
+      <form onSubmit={submitHandler}>
         <div>
           <label>Brand </label>
-          {
-            errors.brand ? 
-              <span className="error-text">{errors.brand.message}</span>
-              : null
-          }
+          {errors.brand ? (
+            <span className="error-text">{errors.brand.message}</span>
+          ) : null}
           <input
             type="text"
             name="brand"
@@ -69,11 +67,9 @@ const SneakerForm = (props) => {
         </div>
         <div>
           <label>Name </label>
-          {
-            errors.name ? 
-              <span className="error-text">{errors.name.message}</span>
-              : null
-          }
+          {errors.name ? (
+            <span className="error-text">{errors.name.message}</span>
+          ) : null}
           <input
             type="text"
             name="name"
@@ -83,11 +79,9 @@ const SneakerForm = (props) => {
         </div>
         <div>
           <label>Colorway </label>
-          {
-            errors.colorway ? 
-              <span className="error-text">{errors.colorway.message}</span>
-              : null
-          }
+          {errors.colorway ? (
+            <span className="error-text">{errors.colorway.message}</span>
+          ) : null}
           <input
             type="text"
             name="colorway"
@@ -97,65 +91,53 @@ const SneakerForm = (props) => {
         </div>
         <div>
           <label>Release Date </label>
-          {
-            errors.releaseDate ? 
-              <span className="error-text">{errors.releaseDate.message}</span>
-              : null
-          }
+          {errors.releaseDate ? (
+            <span className="error-text">{errors.releaseDate.message}</span>
+          ) : null}
           <input
             type="text"
             name="releaseDate"
-            value={ (new Date(sneaker.releaseDate)).toLocaleDateString("en-us") }
+            value={ sneaker.releaseDate }
             onChange={inputChange}
           />
         </div>
         <div>
           <label>Size </label>
-          {
-            errors.size ? 
-              <span className="error-text">{errors.size.message}</span>
-              : null
-          }
-          <select
-            name="size"
-            value={sneaker.size}
-            onChange={inputChange}
-            >
+          {errors.size ? (
+            <span className="error-text">{errors.size.message}</span>
+          ) : null}
+          <select name="size" value={sneaker.size} onChange={inputChange}>
             <option value=""></option>
-            {
-              size.map((size, index) => (
-                <option value={ size } key={ 'size-' + index }>{ size }</option>
-              ))
-            }
-            </select>
+            {size.map((size, index) => (
+              <option value={size} key={"size-" + index}>
+                {size}
+              </option>
+            ))}
+          </select>
         </div>
         <div>
           <label>Condition </label>
-          {
-            errors.condition ? 
-              <span className="error-text">{errors.condition.message}</span>
-              : null
-          }
+          {errors.condition ? (
+            <span className="error-text">{errors.condition.message}</span>
+          ) : null}
           <select
             name="condition"
             value={sneaker.condition}
             onChange={inputChange}
-            >
+          >
             <option value=""></option>
-            {
-              condition.map((condition, index) => (
-                <option value={ condition } key={ 'condition-' + index }>{ condition }</option>
-              ))
-            }
-            </select>
+            {condition.map((condition, index) => (
+              <option value={condition} key={"condition-" + index}>
+                {condition}
+              </option>
+            ))}
+          </select>
         </div>
         <div>
           <label>Price </label>
-          {
-            errors.price ? 
-              <span className="error-text">{errors.price.message}</span>
-              : null
-          }
+          {errors.price ? (
+            <span className="error-text">{errors.price.message}</span>
+          ) : null}
           <input
             type="number"
             min="1"
@@ -166,11 +148,9 @@ const SneakerForm = (props) => {
         </div>
         <div>
           <label>Upload Image </label>
-          {
-            errors.img ? 
-              <span className="error-text">{errors.img.message}</span>
-              : null
-          }
+          {errors.img ? (
+            <span className="error-text">{errors.img.message}</span>
+          ) : null}
           <input
             type="text"
             name="img"
@@ -178,11 +158,18 @@ const SneakerForm = (props) => {
             onChange={inputChange}
           />
         </div>
-        <button>{ buttonLabel }</button>
-        <button onClick={ () => navigate('/sneakers/all/')} className="homeBtn">Return To Inventory</button>
+        <div className="invButtons">
+          <button>{buttonLabel}</button>
+          <button
+            onClick={() => navigate("/sneakers/all/")}
+            className="homeBtn"
+          >
+            Return To Inventory
+          </button>
+        </div>
       </form>
-  </div>
-  )
-}
+    </div>
+  );
+};
 
 export default SneakerForm;
