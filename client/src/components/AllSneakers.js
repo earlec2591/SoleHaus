@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { navigate, Link } from "@reach/router";
+import Checkout from "./Checkout";
 
 const AllSneakers = (props) => {
   const [allSneakers, setAllSneakers] = useState([]);
@@ -20,23 +21,27 @@ const AllSneakers = (props) => {
   return (
     <div>
       <h1>Inventory</h1>
+      <div className="invButtons">
       <button onClick={getAllSneakers}>Show Inventory</button>
       <Link to="/sneakers/add">
         <button>Sell Your Sneakers</button>
       </Link>
-      {allSneakers.map((sneaker, index) => (
-        <div key={index}>
-          <Link to={`/sneakers/${sneaker._id}`}>
-            <img src={sneaker.img} alt="sneaker-img" />
-            <h3>
-              {sneaker.brand} {sneaker.name}
-            </h3>
-          </Link>
-          <h4>Colorway: {sneaker.colorway}</h4>
-          <h4>Size: {sneaker.size}</h4>
-          <h4>Price: ${sneaker.price}</h4>
-        </div>
-      ))}
+      </div>
+      <div className="container">
+        {allSneakers.map((sneaker, index) => (
+          <div key={index}>
+            <Link to={`/sneakers/${sneaker._id}`}>
+              <img src={sneaker.img} alt="sneaker-img" />
+              <h3>
+                {sneaker.brand} {sneaker.name}
+              </h3>
+            </Link>
+            <h4>Colorway: {sneaker.colorway}</h4>
+            <h4>Size: {sneaker.size}</h4>
+            <h4>Price: ${sneaker.price}</h4>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

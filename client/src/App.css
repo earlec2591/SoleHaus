@@ -10,6 +10,7 @@ h1 {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   text-align: center;
   color: navy;
+  font-size: 50px;
 }
 
 h2, h3, h4, h5, h6 {
@@ -20,6 +21,14 @@ p {
   text-align: center;
 }
 
+.invButtons {
+  text-align: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
 
 tablet {
   border-collapse: collapse;
@@ -56,6 +65,7 @@ input, select {
 }
 
 button {
+  height: 35px;
   margin: 0px 10px;
   padding: 5px 20px;
   border: black;
@@ -63,6 +73,7 @@ button {
   cursor: pointer;
   color: white;
   background-color: green;
+  font-size: 16px;
 }
 
 .error-text {
