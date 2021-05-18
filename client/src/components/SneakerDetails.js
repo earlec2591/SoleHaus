@@ -62,7 +62,7 @@ const SneakerDetails = (props) => {
         <button onClick={buySneaker} className="buyBtn">
           Buy Sneaker
         </button>
-        <button onClick={() => navigate("/sneakers/all/")} className="homeBtn">
+        <button onClick={() => navigate("/sneakers/all")} className="homeBtn">
           Return To Inventory
         </button>
       </div>

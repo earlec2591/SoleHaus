@@ -97,7 +97,7 @@ const SneakerForm = (props) => {
           <input
             type="text"
             name="releaseDate"
-            value={ sneaker.releaseDate }
+            value={ new Date(sneaker.releaseDate).toLocaleDateString("en-us") }
             onChange={inputChange}
           />
         </div>

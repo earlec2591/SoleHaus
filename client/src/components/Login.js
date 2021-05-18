@@ -29,9 +29,10 @@ const Login = (props) => {
             name="password"
           />
         </div>
+        <div className="invButtons">
         <button onClick={ () => navigate('/sneakers/all/')} className="homeBtn">Login</button>
         <h5>Not a member? Click <Link to='/signup'>here</Link> to signup!</h5>
-        
+        </div>
       </form>
     </div>
   )
